@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeSubPubWinForm", "FakeSubPubWinForm\FakeSubPubWinForm.csproj", "{90B53E60-12F5-42F7-AB1A-552736771E71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakePubSub", "FakePubSub\FakePubSub.csproj", "{05EFDA50-415B-4F4A-958C-8096DFDD259B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90B53E60-12F5-42F7-AB1A-552736771E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90B53E60-12F5-42F7-AB1A-552736771E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90B53E60-12F5-42F7-AB1A-552736771E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90B53E60-12F5-42F7-AB1A-552736771E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05EFDA50-415B-4F4A-958C-8096DFDD259B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05EFDA50-415B-4F4A-958C-8096DFDD259B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05EFDA50-415B-4F4A-958C-8096DFDD259B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05EFDA50-415B-4F4A-958C-8096DFDD259B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E379B59B-5AD0-47DF-A476-8135B7AAB259}
+	EndGlobalSection
+EndGlobal
