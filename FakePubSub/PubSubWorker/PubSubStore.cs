@@ -17,17 +17,17 @@ namespace FakePubSub.PubSubWorker
 
         public void Subscribe(PubSubStoreField field, dynamic form)
         {
-            _workers.GetValue(field).Subscribe(form);
+            _workers.GetValue(field)?.Subscribe(form);
         }
 
         public void UnSubscribe(PubSubStoreField field, dynamic form)
         {
-            _workers.GetValue(field).UnSubscribe(form);
+            _workers.GetValue(field)?.UnSubscribe(form);
         }
 
         public void Publish(PubSubStoreField field, dynamic form, dynamic value)
         {
-            _workers.GetValue(field).Publish(form, value);
+            _workers.GetValue(field)?.Publish(form, value);
         }
     }
 }

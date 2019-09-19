@@ -2,6 +2,6 @@ namespace FakePubSub
 {
     public interface IPublishFieldCount
     {
-        void Publish(decimal value);
+        void PublishCount(decimal value);
     }
 }

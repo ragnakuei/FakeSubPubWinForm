@@ -10,7 +10,7 @@ namespace FakePubSub.PubSubWorker
             var forms = _forms.Where(f => f != form);
             foreach (var changedCountField in forms)
             {
-                changedCountField.Publish(value);
+                changedCountField.PublishCount(value);
             }
         }
     }

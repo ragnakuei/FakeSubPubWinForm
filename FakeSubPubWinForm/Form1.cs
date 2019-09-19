@@ -25,7 +25,7 @@ namespace FakeSubPubWinForm
             _pubSubStore.Subscribe(PubSubStoreField.Name, this);
         }
 
-        public void Publis(string value)
+        public void PublishName(string value)
         {
             tbxName.Text = value as string;
         }

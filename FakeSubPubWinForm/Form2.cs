@@ -26,12 +26,12 @@ namespace FakeSubPubWinForm
             _pubSubStore.Subscribe(PubSubStoreField.Count, this);
         }
 
-        public void Publis(string value)
+        public void PublishName(string value)
         {
             tbxName.Text = value;
         }
 
-        public void Publish(decimal value)
+        public void PublishCount(decimal value)
         {
             nudCount.Value = value;
         }

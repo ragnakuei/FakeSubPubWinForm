@@ -2,6 +2,6 @@
 {
     public interface IPublishFieldName
     {
-        void Publis(string value);
+        void PublishName(string value);
     }
 }
