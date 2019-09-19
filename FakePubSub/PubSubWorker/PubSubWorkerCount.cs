@@ -3,31 +3,14 @@ using System.Linq;
 
 namespace FakePubSub.PubSubWorker
 {
-    internal class PubSubWorkerCount : IPubSubWorker<IChangeCountField, decimal>
+    internal class PubSubWorkerCount : PubSubWorker<IPublishFieldCount, decimal>
     {
-        private readonly List<IChangeCountField> _forms;
-
-        public PubSubWorkerCount()
-        {
-            _forms = new List<IChangeCountField>();
-        }
-
-        public void RegisterForm(IChangeCountField form)
-        {
-            _forms.Add(form);
-        }
-
-        public bool UnRegisterForm(IChangeCountField form)
-        {
-            return _forms.Remove(form);
-        }
-
-        public void Change(IChangeCountField form, decimal value)
+        public override void Publish(IPublishFieldCount form, decimal value)
         {
             var forms = _forms.Where(f => f != form);
             foreach (var changedCountField in forms)
             {
-                changedCountField.ChangeField(value);
+                changedCountField.Publish(value);
             }
         }
     }

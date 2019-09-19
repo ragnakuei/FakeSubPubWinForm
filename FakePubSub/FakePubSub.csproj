@@ -42,10 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers.cs" />
-    <Compile Include="IChangeCountField.cs" />
-    <Compile Include="IChangeNameField.cs" />
+    <Compile Include="IPublishFieldCount.cs" />
+    <Compile Include="IPublishFieldName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PubSubWorker\IPubSubWorker.cs" />
+    <Compile Include="PubSubWorker\PubSubWorker.cs" />
     <Compile Include="PubSubWorker\PubSubStore.cs" />
     <Compile Include="PubSubWorker\PubSubStoreField.cs" />
     <Compile Include="PubSubWorker\PubSubWorkerCount.cs" />

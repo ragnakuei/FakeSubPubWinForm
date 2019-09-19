@@ -15,24 +15,19 @@ namespace FakePubSub.PubSubWorker
                        };
         }
 
-        public void Register(PubSubStoreField field, dynamic form)
+        public void Subscribe(PubSubStoreField field, dynamic form)
         {
-            _workers.GetValue(field).Register(form);
+            _workers.GetValue(field).Subscribe(form);
         }
 
-        public void UnRegister(PubSubStoreField field, dynamic form)
+        public void UnSubscribe(PubSubStoreField field, dynamic form)
         {
-            _workers.GetValue(field).UnRegister(form);
+            _workers.GetValue(field).UnSubscribe(form);
         }
 
-        public void Change(PubSubStoreField field, dynamic form, dynamic value)
+        public void Publish(PubSubStoreField field, dynamic form, dynamic value)
         {
-            _workers.GetValue(field).Change(form, value);
-        }
-
-        public dynamic GetWorker(PubSubStoreField field)
-        {
-            return _workers.GetValue(field);
+            _workers.GetValue(field).Publish(form, value);
         }
     }
 }

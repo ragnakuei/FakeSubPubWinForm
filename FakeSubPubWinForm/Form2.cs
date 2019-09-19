@@ -12,7 +12,7 @@ using FakePubSub.PubSubWorker;
 
 namespace FakeSubPubWinForm
 {
-    public partial class Form2 : Form, IChangeNameField, IChangeCountField
+    public partial class Form2 : Form, IPublishFieldName, IPublishFieldCount
     {
         private readonly PubSubStore _pubSubStore;
 
@@ -22,16 +22,16 @@ namespace FakeSubPubWinForm
 
             _pubSubStore = pubSubStore;
 
-            _pubSubStore.Register(PubSubStoreField.Name, this);
-            _pubSubStore.Register(PubSubStoreField.Count, this);
+            _pubSubStore.Subscribe(PubSubStoreField.Name, this);
+            _pubSubStore.Subscribe(PubSubStoreField.Count, this);
         }
 
-        public void ChangeField(string value)
+        public void Publis(string value)
         {
             tbxName.Text = value;
         }
 
-        public void ChangeField(decimal value)
+        public void Publish(decimal value)
         {
             nudCount.Value = value;
         }
@@ -39,19 +39,19 @@ namespace FakeSubPubWinForm
         private void TbxName_TextChanged(object sender, EventArgs e)
         {
             var value = (sender as TextBox)?.Text ?? string.Empty;
-            _pubSubStore.Change(PubSubStoreField.Name, this, value);
+            _pubSubStore.Publish(PubSubStoreField.Name, this, value);
         }
 
         private void NudCount_ValueChanged(object sender, EventArgs e)
         {
             var value = (sender as NumericUpDown)?.Value ?? 0m;
-            _pubSubStore.Change(PubSubStoreField.Count, this, value);
+            _pubSubStore.Publish(PubSubStoreField.Count, this, value);
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            _pubSubStore.UnRegister(PubSubStoreField.Name, this);
-            _pubSubStore.UnRegister(PubSubStoreField.Count, this);
+            _pubSubStore.UnSubscribe(PubSubStoreField.Name, this);
+            _pubSubStore.UnSubscribe(PubSubStoreField.Count, this);
         }
     }
 }

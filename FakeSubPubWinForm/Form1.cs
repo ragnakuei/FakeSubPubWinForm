@@ -12,7 +12,7 @@ using FakePubSub.PubSubWorker;
 
 namespace FakeSubPubWinForm
 {
-    public partial class Form1 : Form, IChangeNameField
+    public partial class Form1 : Form, IPublishFieldName
     {
         private readonly PubSubStore _pubSubStore;
 
@@ -22,10 +22,10 @@ namespace FakeSubPubWinForm
 
             _pubSubStore = pubSubStore;
 
-            _pubSubStore.Register(PubSubStoreField.Name, this);
+            _pubSubStore.Subscribe(PubSubStoreField.Name, this);
         }
 
-        public void ChangeField(string value)
+        public void Publis(string value)
         {
             tbxName.Text = value as string;
         }
@@ -33,7 +33,7 @@ namespace FakeSubPubWinForm
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
             var value = (sender as TextBox)?.Text ?? string.Empty;
-            _pubSubStore.Change(PubSubStoreField.Name, this, value);
+            _pubSubStore.Publish(PubSubStoreField.Name, this, value);
         }
 
         private void BtnOpenForm2_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace FakeSubPubWinForm
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            _pubSubStore.UnRegister(PubSubStoreField.Name, this);
+            _pubSubStore.UnSubscribe(PubSubStoreField.Name, this);
         }
 
         private void BtnOpenForm3_Click(object sender, EventArgs e)
